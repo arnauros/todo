@@ -18,12 +18,17 @@ submitTask.addEventListener("click", function (event) {
   const newtask = document.createElement("div");
   console.log("container created");
 
-  //add content in the div
-  newtask.textContent = inputTask.value;
-  console.log(newtask);
+  const doneButton = doneButton.cloneNode(true);
+  const textItem = textItem.cloneNode(true);
+  const deleteTask = deleteTask.cloneNode(true);
 
-  containerWrapper.appendChild(newtask);
-  containerWrapper.appendChild(doneButton);
-  containerWrapper.appendChild(deleteTask);
-  console.log("task added");
+  textItem.textcontent = inputTask.value; //get the value of the input
+
+  newtask.appendChild(doneButton);
+  newtask.appendChild(textItem);
+  newtask.appendChild(deleteTask);
+
+  containerTasks.appendChild(newtask);
+
+  inputTask.value = ""; //clear the input
 });
