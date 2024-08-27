@@ -9,7 +9,7 @@ const deleteTask = document.getElementById("deleteTask");
 
 //add an event listener to click the btn
 document
-  .getelemendbyId("submitTask")
+  .querySelector("#submitTask")
   .addEventListener("click", function (event) {
     event.preventDefault();
 
