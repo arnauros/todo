@@ -3,32 +3,36 @@
 const submitTask = document.getElementById("submitTask");
 const inputTask = document.getElementById("inputTask");
 const containerTasks = document.getElementById("containerTasks");
-const doneButton = document.getElementById("doneButton");
-const textItem = document.getElementById("textItem");
-const deleteTask = document.getElementById("deleteTask");
-const containerWrapper = document.getElementById("containerWrapper");
+const doneButtonTemplate = document.getElementById("doneButton");
+const textItemTemplate = document.getElementById("textItem");
+const deleteTaskTemplate = document.getElementById("deleteTask");
 
 console.log("loaded");
 
-//add an event listener to click the btn
+// Add an event listener to the submit button
 submitTask.addEventListener("click", function (event) {
   event.preventDefault();
 
-  //add a new div
-  const newtask = document.createElement("div");
+  // Create a new div to hold the task elements
+  const newTaskDiv = document.createElement("div");
   console.log("container created");
 
+  // Clone the templates
   const doneButton = doneButtonTemplate.cloneNode(true);
   const textItem = textItemTemplate.cloneNode(true);
   const deleteTask = deleteTaskTemplate.cloneNode(true);
 
-  textItem.textContent = inputTask.value; //get the value of the input
+  // Set the text content of the cloned textItem to the input value
+  textItem.textContent = inputTask.value;
 
-  newtask.appendChild(doneButton);
-  newtask.appendChild(textItem);
-  newtask.appendChild(deleteTask);
+  // Append the cloned elements to the new task div
+  newTaskDiv.appendChild(doneButton);
+  newTaskDiv.appendChild(textItem);
+  newTaskDiv.appendChild(deleteTask);
 
-  containerTasks.appendChild(newtask);
+  // Append the new task div to the containerTasks div
+  containerTasks.appendChild(newTaskDiv);
 
-  inputTask.value = ""; //clear the input
+  // Clear the input field after adding the task
+  inputTask.value = "";
 });
