@@ -6,6 +6,7 @@ const containerTasks = document.getElementById("containerTasks");
 const doneButton = document.getElementById("doneButton");
 const textItem = document.getElementById("textItem");
 const deleteTask = document.getElementById("deleteTask");
+const containerWrapper = document.getElementById("containerWrapper");
 
 console.log("loaded");
 
@@ -21,6 +22,6 @@ submitTask.addEventListener("click", function (event) {
   newtask.textContent = inputTask.value;
   console.log(newtask);
 
-  containerTasks.appendChild(newtask);
+  containerWrapper.appendChild(newtask);
   console.log("task added");
 });
