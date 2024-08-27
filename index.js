@@ -50,8 +50,8 @@ submitTask.addEventListener("click", function (event) {
     });
 
     // Append the cloned elements to the new task container
-    newTaskContainer.appendChild(newTaskSpan);
     newTaskContainer.appendChild(inlineDoneButton);
+    newTaskContainer.appendChild(newTaskSpan);
     newTaskContainer.appendChild(newDeleteButton);
 
     // Append the new task container to the main container
