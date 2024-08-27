@@ -3,11 +3,12 @@
 const submitTask = document.getElementById("submitTask");
 const inputTask = document.getElementById("inputTask");
 const containerTasks = document.getElementById("containerTasks");
+const containerWrapper = document.getElementById("containerWrapper");
 const doneButtonTemplate = document.getElementById("doneButton");
 const textItemTemplate = document.getElementById("textItem");
 const deleteTaskTemplate = document.getElementById("deleteTask");
 
-console.log("loaded2");
+console.log("loaded3");
 
 // Add an event listener to the submit button
 submitTask.addEventListener("click", function (event) {
@@ -31,7 +32,7 @@ submitTask.addEventListener("click", function (event) {
     newTaskDiv.appendChild(deleteTask);
 
     // Append the new task div to the containerTasks div
-    containerTasks.appendChild(newTaskDiv);
+    containerWrapper.appendChild(newTaskDiv);
 
     // Clear the input field after adding the task
     inputTask.value = "";
