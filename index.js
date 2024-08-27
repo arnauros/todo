@@ -10,7 +10,7 @@ const doneButtonTemplate = document.getElementById("doneButton");
 const textItemTemplate = document.getElementById("textItem");
 const deleteTaskTemplate = document.getElementById("deleteTask");
 
-console.log("loaded4");
+console.log("loaded");
 
 // Add an event listener to the submit button
 submitTask.addEventListener("click", function (event) {
@@ -33,14 +33,14 @@ submitTask.addEventListener("click", function (event) {
     newTaskSpan.textContent = task.text;
 
     const inlineDoneButton = document.createElement("button");
-    inlineDoneButton.style(".btn");
+    inlineDoneButton.classList.add("btn");
     inlineDoneButton.addEventListener("click", function () {
       textItemTemplate.style.textDecoration = "line-through";
       task.done = true;
     });
 
     const newDeleteButton = document.createElement("button");
-    newDeleteButton.style(".btn");
+    newDeleteButton.classList.add("btn");
     newDeleteButton.addEventListener("click", function () {
       containerWrapper.removeChild(newTaskContainer);
       tasks = tasks.filter((t) => t !== task);
