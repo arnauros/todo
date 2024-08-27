@@ -10,48 +10,53 @@ const doneButtonTemplate = document.getElementById("doneButton");
 const textItemTemplate = document.getElementById("textItem");
 const deleteTaskTemplate = document.getElementById("deleteTask");
 
-console.log("loaded");
+console.log("loaded4");
 
 // Add an event listener to the submit button
 submitTask.addEventListener("click", function (event) {
   event.preventDefault();
+
   if (inputTask.value !== "") {
-    // create new task object
+    // Create new task object
     const task = {
       text: inputTask.value,
       done: false,
       delete: false,
     };
-    //take the task object and push it into the tasks array ^^
+
+    // Push the task into the tasks array
     tasks.push(task);
 
-    //create new div with this
+    // Create a new div for the task
     const newTaskContainer = document.createElement("div");
 
-    // create new span for the text
-    const newTaskSpan = document.createElement("span");
+    // Clone the textItemTemplate and set its content
+    const newTaskSpan = textItemTemplate.cloneNode(true);
     newTaskSpan.textContent = task.text;
 
-    const inlineDoneButton = document.createElement("button");
-    inlineDoneButton.classList.add("btn");
+    // Clone the done button and set up its event listener
+    const inlineDoneButton = doneButtonTemplate.cloneNode(true);
     inlineDoneButton.addEventListener("click", function () {
-      textItemTemplate.style.textDecoration = "line-through";
+      newTaskSpan.style.textDecoration = "line-through";
       task.done = true;
     });
 
-    const newDeleteButton = document.createElement("button");
-    newDeleteButton.classList.add("btn");
+    // Clone the delete button and set up its event listener
+    const newDeleteButton = deleteTaskTemplate.cloneNode(true);
     newDeleteButton.addEventListener("click", function () {
       containerWrapper.removeChild(newTaskContainer);
       tasks = tasks.filter((t) => t !== task);
     });
 
-    newTaskContainer.appendChild(newDeleteButton);
-    newTaskContainer.appendChild(textItemTemplate);
+    // Append the cloned elements to the new task container
+    newTaskContainer.appendChild(newTaskSpan);
     newTaskContainer.appendChild(inlineDoneButton);
+    newTaskContainer.appendChild(newDeleteButton);
 
+    // Append the new task container to the main container
     containerWrapper.appendChild(newTaskContainer);
 
+    // Clear the input field
     inputTask.value = "";
   } else {
     alert("Please enter a task");
