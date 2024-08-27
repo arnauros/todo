@@ -12,6 +12,15 @@ const deleteTaskTemplate = document.getElementById("deleteTask");
 
 console.log("loaded4");
 
+document.addEventListener("DOMContentLoaded", function () {
+  const containerWrapper = document.getElementById("containerWrapper");
+
+  // Assuming there's only one child initially with dummy content
+  if (containerWrapper.children.length > 0) {
+    containerWrapper.removeChild(containerWrapper.children[0]);
+  }
+});
+
 // Add an event listener to the submit button
 submitTask.addEventListener("click", function (event) {
   event.preventDefault();
