@@ -21,6 +21,6 @@ submitTask.addEventListener("click", function (event) {
   newtask.textContent = inputTask.value;
   console.log(newtask);
 
-  containerTasks.appendChild(newTaskDiv);
+  containerTasks.appendChild(newTask);
   console.log("task added");
 });
