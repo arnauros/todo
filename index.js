@@ -10,7 +10,7 @@ const doneButtonTemplate = document.getElementById("doneButton");
 const textItemTemplate = document.getElementById("textItem");
 const deleteTaskTemplate = document.getElementById("deleteTask");
 
-console.log("loaded3");
+console.log("loaded4");
 
 // Add an event listener to the submit button
 submitTask.addEventListener("click", function (event) {
