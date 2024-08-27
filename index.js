@@ -29,6 +29,7 @@ submitTask.addEventListener("click", function (event) {
 
     // Create a new div for the task
     const newTaskContainer = document.createElement("div");
+    newTaskContainer.classList.add("wrappertext");
 
     // Clone the textItemTemplate and set its content
     const newTaskSpan = textItemTemplate.cloneNode(true);
@@ -45,7 +46,7 @@ submitTask.addEventListener("click", function (event) {
     const newDeleteButton = deleteTaskTemplate.cloneNode(true);
     newDeleteButton.addEventListener("click", function () {
       containerWrapper.removeChild(newTaskContainer);
-      tasks = tasks.filter((t) => t !== task);
+      tasks = tasks.pop;
     });
 
     // Append the cloned elements to the new task container
