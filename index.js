@@ -1,5 +1,7 @@
 "use strict";
 
+let tasks = [];
+
 const submitTask = document.getElementById("submitTask");
 const inputTask = document.getElementById("inputTask");
 const containerTasks = document.getElementById("containerTasks");
@@ -14,27 +16,42 @@ console.log("loaded3");
 submitTask.addEventListener("click", function (event) {
   event.preventDefault();
   if (inputTask.value !== "") {
-    // Create a new div to hold the task elements
-    const newTaskDiv = document.createElement("div");
-    console.log("container created");
+    // create new task object
+    const task = {
+      text: inputTask.value,
+      done: false,
+      delete: false,
+    };
+    //take the task object and push it into the tasks array ^^
+    tasks.push(task);
 
-    // Clone the templates
-    const doneButton = doneButtonTemplate.cloneNode(true);
-    const textItem = textItemTemplate.cloneNode(true);
-    const deleteTask = deleteTaskTemplate.cloneNode(true);
+    //create new div with this
+    const newTaskContainer = document.createElement("div");
 
-    // Set the text content of the cloned textItem to the input value
-    textItem.textContent = inputTask.value;
+    // create new span for the text
+    const newTaskSpan = document.createElement("span");
+    newTaskSpan.textContent = task.text;
 
-    // Append the cloned elements to the new task div
-    newTaskDiv.appendChild(doneButton);
-    newTaskDiv.appendChild(textItem);
-    newTaskDiv.appendChild(deleteTask);
+    const inlineDoneButton = document.createElement("button");
+    inlineDoneButton.style(".btn");
+    inlineDoneButton.addEventListener("click", function () {
+      textItemTemplate.style.textDecoration = "line-through";
+      task.done = true;
+    });
 
-    // Append the new task div to the containerTasks div
-    containerWrapper.appendChild(newTaskDiv);
+    const newDeleteButton = document.createElement("button");
+    newDeleteButton.style(".btn");
+    newDeleteButton.addEventListener("click", function () {
+      containerWrapper.removeChild(newTaskContainer);
+      tasks = tasks.filter((t) => t !== task);
+    });
 
-    // Clear the input field after adding the task
+    newTaskContainer.appendChild(newDeleteButton);
+    newTaskContainer.appendChild(textItemTemplate);
+    newTaskContainer.appendChild(inlineDoneButton);
+
+    containerWrapper.appendChild(newTaskContainer);
+
     inputTask.value = "";
   } else {
     alert("Please enter a task");
