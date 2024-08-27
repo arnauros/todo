@@ -7,6 +7,8 @@ const doneButton = document.getElementById("doneButton");
 const textItem = document.getElementById("textItem");
 const deleteTask = document.getElementById("deleteTask");
 
+console.log("loaded");
+
 //add an event listener to click the btn
 submitTask.addEventListener("click", function (event) {
   event.preventDefault();
