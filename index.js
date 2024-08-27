@@ -8,10 +8,12 @@ const textItem = document.getElementById("textItem");
 const deleteTask = document.getElementById("deleteTask");
 
 //add an event listener to click the btn
-document.querySelector = submitTask.addEventListener("click", function (event) {
-  event.preventDefault();
+document
+  .getelemendbyId("submitTask")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
 
-  //add a new div
-  const container = document.createElement("containerTasks");
-  console.log("container created");
-});
+    //add a new div
+    document.createElement("div");
+    console.log("container created");
+  });
