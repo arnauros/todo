@@ -18,6 +18,6 @@ submitTask.addEventListener("click", function (event) {
   console.log("container created");
 
   //add content in the div
-  newtask = inputTask.textContent;
+  newtask.textContent = inputTask.textContent;
   console.log("content added");
 });
