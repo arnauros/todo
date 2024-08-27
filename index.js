@@ -23,5 +23,7 @@ submitTask.addEventListener("click", function (event) {
   console.log(newtask);
 
   containerWrapper.appendChild(newtask);
+  containerWrapper.appendChild(doneButton);
+  containerWrapper.appendChild(deleteTask);
   console.log("task added");
 });
