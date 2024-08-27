@@ -14,6 +14,6 @@ submitTask.addEventListener("click", function (event) {
   event.preventDefault();
 
   //add a new div
-  document.createElement("div");
+  const newtask = document.createElement("div");
   console.log("container created");
 });
