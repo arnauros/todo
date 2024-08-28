@@ -12,15 +12,6 @@ const apiKey = "90f864214a654abeafc276df339dc7e8";
 
 console.log("page loaded2");
 
-document.addEventListener("DOMContentLoaded", function () {
-  const weatherWrapperOutput = document.getElementById("weatherWrapperOutput");
-
-  // Assuming there's only one child initially with dummy content
-  if (weatherWrapperOutput.children.length > 0) {
-    weatherWrapperOutput.removeChild(weatherWrapperOutput.children[0]);
-  }
-});
-
 findWeatherButton.addEventListener("click", function (e) {
   e.preventDefault();
   //get value by user
