@@ -9,8 +9,9 @@ const containerWrapper = document.getElementById("containerWrapper");
 const doneButtonTemplate = document.getElementById("doneButton");
 const textItemTemplate = document.getElementById("textItem");
 const deleteTaskTemplate = document.getElementById("deleteTask");
+const characterCount = document.getElementById("characterCount");
 
-console.log("loaded4");
+console.log("loaded5");
 
 document.addEventListener("DOMContentLoaded", function () {
   const containerWrapper = document.getElementById("containerWrapper");
@@ -72,3 +73,15 @@ submitTask.addEventListener("click", function (event) {
     alert("Please enter a task");
   }
 });
+
+/////////////////////// character counter
+
+inputTask.addEventListener("keyup", () => {
+  updateCounter();
+});
+
+updateCounter();
+
+function updateCounter() {
+  characterCount.innerText = inputTask.value.length;
+}
