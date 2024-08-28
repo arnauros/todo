@@ -80,8 +80,8 @@ inputTask.addEventListener("keyup", () => {
   updateCounter();
 });
 
-updateCounter();
-
 function updateCounter() {
   characterCount.innerText = inputTask.value.length;
 }
+
+updateCounter();
