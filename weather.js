@@ -9,7 +9,7 @@ const weatherOutput = document.getElementById("weatherOutput");
 //api key
 const apiKey = "90f864214a654abeafc276df339dc7e8";
 
-console.log("page loaded");
+console.log("page loaded2");
 
 findWeatherButton.addEventListener("click", function (e) {
   e.preventDefault();
