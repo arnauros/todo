@@ -75,7 +75,7 @@ submitTask.addEventListener("click", function (event) {
 });
 
 /////////////////////// character counter
-
+// listen for characters
 inputTask.addEventListener("keyup", () => {
   updateCounter();
 });
