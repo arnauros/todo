@@ -21,7 +21,7 @@ findWeatherButton.addEventListener("click", function (e) {
     return;
   }
   //build the api url
-  const apiURL = `https://api.weatherbit.io/v2.0/current?city=${textWeatherInput}&key${apiKey}`;
+  const apiURL = `https://api.weatherbit.io/v2.0/current?city=${textWeatherInput}&key=${apiKey}`;
 
   //fetch data
   fetch(apiURL)
