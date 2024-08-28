@@ -6,7 +6,7 @@ const findWeatherButton = document.getElementById("findWeatherButton");
 // output elements
 const temperatureOutput = document.getElementById("temperatureOutput");
 const weatherOutput = document.getElementById("weatherOutput");
-// const weatherWrapperOutput = document.getElementById("weatherWrapperOutput");
+const weatherWrapperOutput = document.getElementById("weatherWrapperOutput");
 //api key
 const apiKey = "90f864214a654abeafc276df339dc7e8";
 
