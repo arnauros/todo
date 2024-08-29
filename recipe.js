@@ -5,7 +5,7 @@ const apiKey = "b3239c2d04d2a67ff2cc7a4c6ea25daf";
 const apiID = "4d7e9113";
 
 //log
-console.log("recipe.js is connected");
+console.log("recipe.js is connect2ed");
 
 //inputs
 const recipesWrapper = document.querySelector("#recipesWrapper");
@@ -37,7 +37,7 @@ const findRecipes = function (recipe) {
     .then((data) => {
       console.log(data);
       console.log(data.value);
-    }
+    })
     .catch((error) => {
       console.log(error);
     })
