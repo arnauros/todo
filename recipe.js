@@ -36,8 +36,9 @@ const findRecipes = function (recipe) {
     });
     .then((data) => {
       console.log(data);
+      console.log(data.value);
     }
     .catch((error) => {
       console.log(error);
-    }))
+    })
 };
