@@ -12,9 +12,10 @@ const apiKey = "90f864214a654abeafc276df339dc7e8";
 
 console.log("page loaded2");
 
+//Logic for finding weather and displaying it
 findWeatherButton.addEventListener("click", function (e) {
   e.preventDefault();
-  //get value by user
+  //get value/input by user
   let textWeatherInput = inputWeather.value;
 
   if (textWeatherInput === "") {
