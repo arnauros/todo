@@ -8,7 +8,7 @@ const recipesWrapper = document.querySelector("#recipesWrapper");
 const findRecipeButton = document.querySelector("#findRecipeButton");
 const inputRecipe = document.querySelector("#inputRecipe");
 
-console.log(inputRecipe);
+// console.log(inputRecipe);
 
 findRecipeButton.addEventListener("click", (e) => {
   e.preventDefault();
