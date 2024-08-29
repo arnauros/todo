@@ -25,6 +25,5 @@ const findRecipes = function () {
 
   fetch(apiUrl)
     .then((response) => response.json())
-    .then(data);
-  console.log(data);
+    .then((data) => console.log(data));
 };
