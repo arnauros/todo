@@ -11,17 +11,17 @@ console.log("recipe.js is connected");
 const recipesWrapper = document.querySelector("#recipesWrapper");
 const findRecipeButton = document.querySelector("#findRecipeButton");
 const inputRecipe = document.querySelector("#inputRecipe");
+const recipe = inputRecipe.value;
 
 //event listeners
 findRecipeButton.addEventListener("click", (e) => {
   e.preventDefault();
   console.log("btn clcike");
-  const recipe = inputRecipe.value;
   console.log(recipe);
 });
 
 const findRecipes = function () {
-  const apiUrl = `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${appId}&app_key=${appKey}`;
+  const apiUrl = `https://api.edamam.com/api/recipes/v2?type=public&q=${recipe}&app_id=${appId}&app_key=${appKey}`;
 };
 
 fetch(apiUrl).then((response) => {
