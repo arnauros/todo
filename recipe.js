@@ -12,6 +12,9 @@ const recipesWrapper = document.querySelector("#recipesWrapper");
 const findRecipeButton = document.querySelector("#findRecipeButton");
 const inputRecipe = document.querySelector("#inputRecipe");
 
+
+///////////////////////////////////////
+
 //event listeners
 findRecipeButton.addEventListener("click", (e) => {
   e.preventDefault();
@@ -20,6 +23,9 @@ findRecipeButton.addEventListener("click", (e) => {
   console.log(recipe);
   findRecipes(recipe);
 });
+
+//////////////////// FUNCTIONS  //////////////////////
+
 
 const findRecipes = function (recipe) {
   const apiUrl = `https://api.edamam.com/api/recipes/v2?type=public&q=${recipe}&app_id=${apiID}&app_key=${apiKey}`;
