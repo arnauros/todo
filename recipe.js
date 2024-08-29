@@ -13,7 +13,8 @@ console.log(inputRecipe);
 findRecipeButton.addEventListener("click", (e) => {
   e.preventDefault();
   console.log("btn clcike");
-  console.log(inputRecipe.value);
+  const recipe = inputRecipe.value;
+  console.log(recipe);
 });
 
 const findRecipes = function () {};
