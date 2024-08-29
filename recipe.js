@@ -2,14 +2,14 @@
 
 //apis
 const apiKey = "b3239c2d04d2a67ff2cc7a4c6ea25daf";
+const apiID = "4d7e9113";
 
 //inputs
 const recipesWrapper = document.querySelector("#recipesWrapper");
 const findRecipeButton = document.querySelector("#findRecipeButton");
 const inputRecipe = document.querySelector("#inputRecipe");
 
-// console.log(inputRecipe);
-
+//event listeners
 findRecipeButton.addEventListener("click", (e) => {
   e.preventDefault();
   console.log("btn clcike");
@@ -17,4 +17,11 @@ findRecipeButton.addEventListener("click", (e) => {
   console.log(recipe);
 });
 
-const findRecipes = function () {};
+const findRecipes = function () {
+  const apiUrl = `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${appId}&app_key=${appKey}`;
+
+  fetch(apiUrl)
+    .then((response) => response.json())
+    .then(data);
+  console.log(data);
+};
