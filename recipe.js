@@ -22,8 +22,12 @@ findRecipeButton.addEventListener("click", (e) => {
 
 const findRecipes = function () {
   const apiUrl = `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${appId}&app_key=${appKey}`;
-
-  fetch(apiUrl)
-    .then((response) => response.json())
-    .then((data) => console.log(data));
 };
+
+fetch(apiUrl).then((response) => {
+  if (response.ok) {
+    console.log("response is ok");
+  } else {
+    console.log("response is not ok");
+  }
+});
